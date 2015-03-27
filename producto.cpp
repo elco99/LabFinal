@@ -1,6 +1,7 @@
 #include <string>
 #include <sstream>
 #include "cliente.h"
+#include "producto.h"
 
 Producto::Producto(double volumen,double peso,double precio,Cliente client){
 	this-> volumen = volumen;
