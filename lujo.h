@@ -8,9 +8,9 @@ class Lujo:public Producto{
  	double tasa;
 public:
 
-	Lujo(double, double, double, double, Cliente);
+	Lujo(double, double, double, double, Cliente&);
 	double getTasa();
 	void setTasa(double);
-	virtual double cobrarImpuesto();
+	virtual double cobrarImpuesto()const;
 	virtual string toString() const;
 };

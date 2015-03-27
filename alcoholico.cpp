@@ -5,7 +5,7 @@
 
 using std::stringstream;
 
-Alcoholico::Alcoholico(double volumen,double peso,double precio,Cliente client,double tasa):Producto(volumen,peso,precio,client),tasa(tasa){
+Alcoholico::Alcoholico(double volumen,double peso,double precio,Cliente &client,double tasa):Producto(volumen,peso,precio,client),tasa(tasa){
 
 }
 double Alcoholico::getTasa()const{
@@ -14,7 +14,7 @@ double Alcoholico::getTasa()const{
 void Alcoholico::setTasa(double tasa){
 	this-> tasa = tasa;
 }
-double Alcoholico::cobrarImpuesto(){
+double Alcoholico::cobrarImpuesto()const{
 	double impuesto;
 	impuesto = (peso+volumen)*tasa;
 	return impuesto;
@@ -22,6 +22,7 @@ double Alcoholico::cobrarImpuesto(){
 
  string Alcoholico::toString()const{
  	stringstream ss;
- 	ss << Producto::toString() << ", Tasa: "<< tasa << ", Impuesto: "<< (cobrarImpuesto() - precio);
- 	return ss;
+ 	double impuesto = Alcoholico::cobrarImpuesto() - getPrecio();
+ 	ss << Producto::toString() << ", Tasa: "<< tasa << ", Impuesto: "<< impuesto;
+ 	return ss.str();
  }

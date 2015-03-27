@@ -5,8 +5,9 @@
 
 using std::string;
 using std::stringstream;
+//double,double,double,Cliente
 
-Producto::Producto(double volumen,double peso,double precio,Cliente client){
+Producto::Producto(double volumen,double peso,double precio,Cliente& cliente){
 	this-> volumen = volumen;
 	this->peso = peso;
 	this->precio = precio;
@@ -33,12 +34,12 @@ void Producto::setPeso(double peso){
 void Producto::setPrecio(double precio){
 	this->precio = precio;
 }
-double Producto::cobrarImpuesto(){
+double Producto::cobrarImpuesto()const{
 	return 0;
 }
 
 string Producto::toString()const{
 	stringstream ss;
-	ss << "Volumen: "<<volumen << ", Peso: "<<peso<<", Precio: "<<precio<<", Cliente: "<<client.toString();
-	return ss;
+	ss << "Volumen: "<<volumen << ", Peso: "<<peso<<", Precio: "<<precio<<", Cliente: "<<client->toString();
+	return ss.str();
 }
