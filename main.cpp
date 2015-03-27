@@ -7,12 +7,21 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include "educativo.h"
 
 using namespace std;
 
 int main(int argc, char * argv[]){
 	int op;
 	vector<Cliente*> clients;
+	vector<Producto*> lista;
+	double tasa1,tasa2,tasa3;
+	cout << "Ingrese la tasa de los productos Educativos"<<endl;
+	cin >> tasa1;
+	cout << "Ingrese la tasa de los productos Alcoholico"<<endl;
+	cin >> tasa2;
+	cout << "Ingrese la tasa de los productos Lujos"<<endl;
+	cin >> tasa3;
 	do{
 		cout << "1.- Agregar Cliente" << endl
 			 << "2.- Agregar Producto" << endl
@@ -43,11 +52,29 @@ int main(int argc, char * argv[]){
 				cin >> op1;
 				switch(op1){
 					case 1:{//Educativo
+						double volumen,peso,precio;
+						int este; 
+						Cliente tmp("","");
+						cout << "Ingrese el volumen del producto Educativo"<<endl; 
+						cin >> volumen; 
+						cout <<"Ingrese el peso del producto Educativo"<<endl; 
+						cin >> peso; 
+						cout <<"Ingrese el precio del producto Educativo"<<endl; 
+						cin >> precio; 
+						cout << "------CLIENTE------"<<endl; 
+						for(int i=0;i < clients.size();i++){ 
+							cout << i << ") " <<clients.at(i)->toString()<<endl; 
+						} 
+						cout << "Ingrese el cliente que compro el producto."<<endl; 
+						cin >> este;
+						tmp = *clients.at(este);
+						lista.push_back(new Educativo(volumen,peso,precio,tmp,tasa1));
 
 					}break;//FIN EDUCATIVO
 					case 2:{//ALCOHOLICO
 						double volumen,peso,precio;
 						int este; 
+						Cliente tmp("","");
 						cout << "Ingrese el volumen del producto alcoholico"<<endl; 
 						cin >> volumen; 
 						cout <<"Ingrese el peso del producto alcoholico"<<endl; 
@@ -60,8 +87,27 @@ int main(int argc, char * argv[]){
 						} 
 						cout << "Ingrese el cliente que compro el producto."<<endl; 
 						cin >> este;
+						tmp = *clients.at(este);
+						lista.push_back(new Alcoholico(volumen,peso,precio,tmp,tasa2));
 					}break;//FIN ALCOHOLICO
 					case 3:{//LUJO
+						double volumen,peso,precio;
+						int este; 
+						Cliente tmp("","");
+						cout << "Ingrese el volumen del producto Lujo"<<endl; 
+						cin >> volumen; 
+						cout <<"Ingrese el peso del producto Lujo"<<endl; 
+						cin >> peso; 
+						cout <<"Ingrese el precio del producto Lujo"<<endl; 
+						cin >> precio; 
+						cout << "------CLIENTE------"<<endl; 
+						for(int i=0;i < clients.size();i++){ 
+							cout << i << ") " <<clients.at(i)->toString()<<endl; 
+						} 
+						cout << "Ingrese el cliente que compro el producto."<<endl; 
+						cin >> este;
+						tmp = *clients.at(este);
+						lista.push_back(new Lujo(tasa3,volumen,peso,precio,tmp));
 
 					}break;//FIN LUJO
 					case 4:{//SALIR

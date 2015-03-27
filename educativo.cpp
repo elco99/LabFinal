@@ -6,8 +6,7 @@
 using std::string;
 using std::stringstream;
 
-Educativo::Educativo(double volumen,double peso,double precio,Cliente& client, double tasa)
-	 :Producto(volumen, peso, precio, client){
+Educativo::Educativo(double volumen,double peso,double precio,Cliente& client, double tasa):Producto(volumen, peso, precio, client){
 	this->tasa = tasa;
 }
 
