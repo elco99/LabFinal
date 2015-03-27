@@ -21,7 +21,6 @@ int main(int argc, char * argv[]){
 
 		switch(op){
 			case 1:{//AGREGAR CLIENTES
-				cout << "1. -Agregar cliente" << endl;
 
 			}break;
 			case 2:{
