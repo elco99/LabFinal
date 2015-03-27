@@ -107,7 +107,7 @@ int main(int argc, char * argv[]){
 
 					}break;//FIN LUJO
 					case 4:{//SALIR
-
+						break;
 					}break;//FIN SALIR
 				}//FIN SWITCH PRODUCTO
 
@@ -126,6 +126,6 @@ int main(int argc, char * argv[]){
 
 		}//FIN SWITCH MAIN MENU	
 
-	}while(true);
+	}while(op <4);
 
 }
