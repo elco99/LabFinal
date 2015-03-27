@@ -2,7 +2,6 @@
 
 #include <string>
 #include "cliente.h"
-
 using std::string;
 
 class Producto{

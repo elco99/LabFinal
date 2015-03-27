@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include "producto.h"
-#include <vector>
 #include "cliente.h"
 
 using namespace std;
@@ -13,4 +12,5 @@ public:
 	double getTasa();
 	void setTasa(double);
 	virtual double cobrarImpuesto();
+	virtual string toString() const;
 };

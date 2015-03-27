@@ -7,11 +7,11 @@
 using std::stringstream;
 using std::string;
 
-class cliente{
+class Cliente{
 	string nom;
 	string apel;
 public:
-	cliente (string, string);
+	Cliente (string, string);
 	string getNom();
 	string getApel();
 
