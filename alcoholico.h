@@ -12,4 +12,5 @@ public:
 	double getTasa()const;
 	void setTasa(double);
 	virtual double cobrarImpuesto();
+	virtual string toString()const;
 };

@@ -19,4 +19,5 @@ public:
 	void setPeso(double);
 	void setPrecio(double);
 	virtual double cobrarImpuesto();
+	virtual string toString()const;
 };
