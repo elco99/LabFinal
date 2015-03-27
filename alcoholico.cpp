@@ -1,3 +1,6 @@
+//Dany C  11341019
+//David B 31211290
+//Rene F 11341197
 #include "producto.h"
 #include "alcoholico.h"
 #include <string>
