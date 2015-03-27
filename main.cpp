@@ -11,5 +11,33 @@
 using namespace std;
 
 int main(int argc, char * argv[]){
+	int op;
+	do{
+		cout << "1.- Agregar Cliente" << endl
+			 << "2.- Agregar Producto" << endl
+			 << "3.- Historial" << endl
+			 << "4.- Salir" << endl;
+		cin >> op;
+
+		switch(op){
+			case 1:{//AGREGAR CLIENTES
+				cout << "1. -Agregar cliente" << endl;
+
+			}break;
+			case 2:{
+				
+			}break;
+			case 3:{
+				
+			}break;
+			default:{
+				break;
+			}break;
+
+
+
+		}//FIN SWITCH MAIN MENU	
+
+	}while(true);
 
 }
