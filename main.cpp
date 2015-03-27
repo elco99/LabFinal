@@ -3,9 +3,13 @@
 #include "lujo.h"
 #include "producto.h"
 #include "alcoholico.h"
-using std::cout;
-using std::cin; 
-using std::endl;
+#include "cliente.h"
+#include <string>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
 int main(int argc, char * argv[]){
 
 }
