@@ -11,9 +11,9 @@ Producto::Producto(double volumen,double peso,double precio,Cliente& cliente){
 	this-> volumen = volumen;
 	this->peso = peso;
 	this->precio = precio;
-	this->client = client;
+	this->cliente = (&cliente);
 }
-Producto::Producto(const Producto& other):volumen(other.volumen),peso(other.peso),precio(other.precio),client(other.client){
+Producto::Producto(const Producto& other):volumen(other.volumen),peso(other.peso),precio(other.precio),cliente(other.cliente){
 
 }
 double Producto::getVolumen()const{
@@ -40,6 +40,6 @@ double Producto::cobrarImpuesto()const{
 
 string Producto::toString()const{
 	stringstream ss;
-	ss << "Volumen: "<<volumen << ", Peso: "<<peso<<", Precio: "<<precio<<", Cliente: "<<client->toString();
+	ss << "Volumen: "<<volumen << ", Peso: "<<peso<<", Precio: "<<precio<<", Cliente: "<< cliente->toString();
 	return ss.str();
 }

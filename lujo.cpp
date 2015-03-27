@@ -19,6 +19,6 @@ double Lujo::cobrarImpuesto()const{
 }
 string Lujo::toString() const {
 	stringstream ss;
-	ss << Producto::toString() <<" , Tasa: "<< ", Impuesto: " <<(cobrarImpuesto() - precio);
+	ss << Producto::toString() <<", Tipo: Lujo"<< ", Tasa: " <<tasa<< ", Impuesto: " <<(cobrarImpuesto() - precio)<< ", Total: "<<cobrarImpuesto();
 	return ss.str();
 }

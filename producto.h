@@ -8,7 +8,7 @@ class Producto{
 protected: 
 	double volumen;
 	double peso;
-	Cliente * client;
+	Cliente * cliente;
 	double precio;
 public:
 	Producto(double,double,double,Cliente &);

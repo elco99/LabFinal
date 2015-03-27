@@ -16,13 +16,13 @@ void Alcoholico::setTasa(double tasa){
 }
 double Alcoholico::cobrarImpuesto()const{
 	double impuesto;
-	impuesto = (peso+volumen)*tasa;
-	return impuesto;
+	impuesto = (peso+volumen)*tasa ;
+	return (impuesto+ precio);
 }
 
  string Alcoholico::toString()const{
  	stringstream ss;
- 	double impuesto = Alcoholico::cobrarImpuesto() - getPrecio();
- 	ss << Producto::toString() << ", Tasa: "<< tasa << ", Impuesto: "<< impuesto;
+ 	double impuesto = cobrarImpuesto() - getPrecio();
+ 	ss << Producto::toString() <<", Tipo: Alcoholico"<< ", Tasa: " <<tasa<< ", Impuesto: "<< impuesto<< " Total: "<< cobrarImpuesto() ;
  	return ss.str();
  }

@@ -2,7 +2,9 @@
 #include "cliente.h"
 #include "educativo.h"
 #include <sstream>
-
+#include <iostream>
+using std::cout;
+using std::endl;
 using std::string;
 using std::stringstream;
 
@@ -17,9 +19,12 @@ double Educativo::getTasa(){
 void Educativo::setTasa(double tasa){
 	this->tasa = tasa;
 }
+double Educativo::cobrarImpuesto()const{
+	return (volumen * tasa) + precio;
+}
 
-string Educativo::toString(){
+string Educativo::toString()const{
 	stringstream ss;
-	ss << "Precio total final: " << (tasa * getTasa());
+	ss<<Producto::toString()<<", Tipo: Educativo"<< ", Tasa: " <<tasa<< " Impuesto: " << (cobrarImpuesto()-precio) << " Total: "<<cobrarImpuesto() <<" ";
 	return ss.str();
 }

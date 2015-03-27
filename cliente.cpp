@@ -28,6 +28,6 @@ void Cliente::getApel(string apel){
 
 string Cliente::toString(){
 	stringstream ss;
-	ss << "Cliente: " << nom << " " << apel;
+	ss  << nom << " " << apel;
 	return ss.str();
 }

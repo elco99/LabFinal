@@ -12,5 +12,6 @@ public:
 	Educativo(double,double,double,Cliente&,double);
 	double getTasa();
 	void setTasa(double);
-	virtual string toString();
+	virtual string toString()const;
+	virtual double cobrarImpuesto()const;
 };

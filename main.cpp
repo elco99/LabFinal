@@ -35,12 +35,11 @@ int main(int argc, char * argv[]){
 				cout << "1. -Agregar cliente" << endl
 					 << "Ingrese nombre del cliente: " << endl;
 				cin >> nombre;
-				cout << "Ingrese apellido del cliente";
+				cout << "Ingrese apellido del cliente"<<endl;
 				cin >> apellido;
 
 				clients.push_back(new Cliente(nombre, apellido));
 				//delete client;
-				cout << (clients.at(0)->toString());
 
 			}break;
 			case 2:{
@@ -67,8 +66,7 @@ int main(int argc, char * argv[]){
 						} 
 						cout << "Ingrese el cliente que compro el producto."<<endl; 
 						cin >> este;
-						tmp = *clients.at(este);
-						lista.push_back(new Educativo(volumen,peso,precio,tmp,tasa1));
+						lista.push_back(new Educativo(volumen,peso,precio,*clients.at(este),tasa1));
 
 					}break;//FIN EDUCATIVO
 					case 2:{//ALCOHOLICO
@@ -87,8 +85,7 @@ int main(int argc, char * argv[]){
 						} 
 						cout << "Ingrese el cliente que compro el producto."<<endl; 
 						cin >> este;
-						tmp = *clients.at(este);
-						lista.push_back(new Alcoholico(volumen,peso,precio,tmp,tasa2));
+						lista.push_back(new Alcoholico(volumen,peso,precio,*clients.at(este),tasa2));
 					}break;//FIN ALCOHOLICO
 					case 3:{//LUJO
 						double volumen,peso,precio;
@@ -106,8 +103,7 @@ int main(int argc, char * argv[]){
 						} 
 						cout << "Ingrese el cliente que compro el producto."<<endl; 
 						cin >> este;
-						tmp = *clients.at(este);
-						lista.push_back(new Lujo(tasa3,volumen,peso,precio,tmp));
+						lista.push_back(new Lujo(tasa3,volumen,peso,precio,*clients.at(este)));
 
 					}break;//FIN LUJO
 					case 4:{//SALIR
@@ -116,10 +112,13 @@ int main(int argc, char * argv[]){
 				}//FIN SWITCH PRODUCTO
 
 			}break;
-			case 3:{
+			case 3:{//historial
+				for(int i =0; i < lista.size();i++){
+					cout << (*lista[i]).toString()<<endl;
+				}
 				
 			}break;
-			default:{
+			default:{//salir
 				break;
 			}break;
 
